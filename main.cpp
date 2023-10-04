@@ -82,7 +82,7 @@ int main() {
     float gpa = (
             marks_itCS    * credit_hours_itCS    + 
             marks_MATFL   * credit_hours_MATFL   + 
-            marks_CP_lec  * credit_hours_CP_lec  + 
+            marks_CP_lec  * credit_hours_CP_lec  +  
             marks_AE1     * credit_hours_AE1     + 
             marks_ICT_lec * credit_hours_ICT_lec + 
             marks_MATFT   * credit_hours_MATFT   + 
