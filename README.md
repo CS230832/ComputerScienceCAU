@@ -1,1 +1,1 @@
-# ComputerScienceCAU by CS230832±
+# ComputerScienceCAU by CS230832
