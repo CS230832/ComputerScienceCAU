@@ -83,6 +83,8 @@ int main() {
             std::cout << x << " / " << y << " = " << x / y << std::endl;
             break;
         }
+
+        op = '\0';
     };
 
     std::cout << "Problem 8:\n";
