@@ -53,8 +53,10 @@ int main() {
     float y = 0.0;
     char op = ' ';
     while (true) {
-        std::cout << "Operations: (+, -, /, *) and to quit type 'q'\nNow enter operation: ";
-        std::cin >> op;
+        while (op != 'q' && op != '+' && op != '-' && op != '*' & op != '/') {
+            std::cout << "Operations: (+, -, /, *) and to quit type 'q'\nNow enter operation: ";
+            std::cin >> op;
+        }
         if (op == 'q')
             break;
         std::cout << "Now enter x: ";
