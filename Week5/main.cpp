@@ -134,6 +134,7 @@ int main() {
     }
     if (denominator != 0)
         std::cout << "Your total GPA is " << nominator / denominator << std::endl;
+    
     std::cout << "Problem 12:\n";
     triangle = 0;
     std::cin >> triangle;
