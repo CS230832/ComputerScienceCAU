@@ -118,6 +118,8 @@ int main() {
     std::cout << "Problem 11:\n";
     float nominator = 0.0;
     float denominator = 0.0;
+#pragma region first method
+/*
     while (true) {
         float credit;
         float mark;
@@ -132,9 +134,25 @@ int main() {
         if (resume == 'n')
             break;
     }
+*/
+#pragma endregion
+    
+    unsigned int num_subjects = 0;
+    std::cout << "Enter number of subjects you want to enter: ";
+    std::cin >> num_subjects;
+
+    while(num_subjects--) {
+        float mark = 0.0f;
+        float credits = 0.0f;
+        std::cout << "Enter the mark and credit hours respectively: ";
+        std::cin >> mark >> credits;
+        nominator += mark * credits;
+        denominator += credits;
+    }
+
     if (denominator != 0)
         std::cout << "Your total GPA is " << nominator / denominator << std::endl;
-    
+
     std::cout << "Problem 12:\n";
     triangle = 0;
     std::cin >> triangle;
