@@ -1,4 +1,4 @@
-CXX := clang++
+CXX := g++
 CXXFLAGS := -std=c++20 -Wall
 TARGET := ./computer_science.out
 SOURCE := ./main.cpp
