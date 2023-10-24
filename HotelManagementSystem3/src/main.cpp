@@ -75,7 +75,7 @@ int main() {
           if (room.isBooked)
             std::cout << "Room { number: " << room.number << ", price: " << room.price << ", isBooked: true, guestName: " << room.guestName << " }\n";
 
-        std::cout << "---------------------------------------------------------------------------------------\n";
+        std::cout << "---------------------------------------------------------------------------------------\n"; 
 
         int roomNumber = 0;
         std::cout << "Enter your room number to check out: ";
