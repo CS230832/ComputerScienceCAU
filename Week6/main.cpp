@@ -24,5 +24,5 @@ std::string getMaxMin(int a, int b, int c) {
     int min = a <= b && a <= c? a:b <= a && b <= c? b:c;
     std::stringstream toReturn{};
     toReturn << "Maximum: " << max << "\nMinimum: " << min;
-    return std::string(toReturn);
+    return toReturn.str();
 }

@@ -1,6 +1,7 @@
 #include <iostream>
+#include <sstream>
 
-void printMaxMin(int, int, int);
+std::string getMaxMin(int, int, int);
 
 int main() {
     int a = 0;
@@ -13,13 +14,15 @@ int main() {
     std::cout << "Enter number c: ";
     std::cin >> c;
 
-    printMaxMin(a, b, c);
+    std::cout << getMaxMin(a, b, c) << std::endl;
 
     return 0;
 }
 
-void printMaxMin(int a, int b, int c) {
+std::string getMaxMin(int a, int b, int c) {
     int max = a >= b && a >= c? a:b >= a && b >= c? b:c;
     int min = a <= b && a <= c? a:b <= a && b <= c? b:c;
-    std::cout << "Maximum: " << max << "\nMinimum: " << min << std::endl;
+    std::stringstream toReturn{};
+    toReturn << "Maximum: " << max << "\nMinimum: " << min;
+    return toReturn.str();
 }

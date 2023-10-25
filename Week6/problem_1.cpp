@@ -16,6 +16,5 @@ int main() {
 }
 
 void print_sum(float a, float b) {
-
     std::cout << a << " + " << b << " = " << a + b << std::endl;
 }
