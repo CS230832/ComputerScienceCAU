@@ -6,7 +6,7 @@ SOURCE := ./main.cpp
 
 build: $(TARGET)
 
-$(TARGET): $(SOURCES)
+$(TARGET): $(SOURCE)
 	$(CXX) $(CXXFLAGS) $(SOURCE) -o $(TARGET)
 	# $(CXX) $(CXXFLAGS) $(SOURCES) -o $(TARGET)
 
