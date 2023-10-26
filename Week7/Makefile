@@ -1,7 +1,7 @@
-CXX := g++
+CXX := clang++
 CXXFLAGS := -std=c++20 -Wall
 TARGET := ./computer_science.out
-SOURCES := ./main.cpp ./factorial.cpp
+SOURCES := ./main.cpp
 # SOURCES := $(wildcard *.cpp) $(wildcard *.c)
 
 build: $(TARGET)
