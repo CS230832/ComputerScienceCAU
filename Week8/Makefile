@@ -1,6 +1,6 @@
 CXX := g++
 CXXFLAGS := -std=c++20 -Wall
-TARGET := ./computer_science
+TARGET := ./computer_science.out
 SOURCES := ./main.cpp
 build: $(TARGET)
 
