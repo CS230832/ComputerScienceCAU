@@ -1,6 +1,5 @@
 #pragma once
 
-#include <iostream>
 #include <string>
 
 class Customer {
@@ -18,13 +17,7 @@ class Customer {
     const std::string &getPhoneNumber() const;
     const std::string &getEmail() const;
 
-    friend std::ostream &operator<<(std::ostream &fmt, const Customer &customer) {
-        fmt << "Customer: " << std::endl
-            << "\tName: " << customer.m_Name << std::endl
-            << "\tPhone Number: " << customer.m_PhoneNumber << std::endl
-            << "\tEmail: " << customer.m_Email << std::endl;
-        return fmt;
-    }
+    void display(unsigned int id);
 
    private:
     std::string m_Name;

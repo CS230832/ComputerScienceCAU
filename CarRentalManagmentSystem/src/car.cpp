@@ -1,5 +1,7 @@
 #include <car.hpp>
 
+#include <iostream>
+
 Car Car::getFromConsole() {
     std::string manufacturer;
     std::string model;
@@ -7,12 +9,13 @@ Car Car::getFromConsole() {
     unsigned int year;
     float rentalPrice;
 
+    std::cin.ignore();
     std::cout << "Enter manufacturer: ";
-    std::cin >> manufacturer;
+    std::getline(std::cin, manufacturer);
     std::cout << "Enter model: ";
-    std::cin >> model;
+    std::getline(std::cin, model);
     std::cout << "Enter plate number: ";
-    std::cin >> plateNumber;
+    std::getline(std::cin, plateNumber);
     std::cout << "Enter year: ";
     std::cin >> year;
     std::cout << "Enter rental price: ";
@@ -47,4 +50,15 @@ const bool &Car::getIsAvailable() const {
 
 void Car::setIsAvailable(bool isAvailable) {
     m_IsAvailable = isAvailable;
+}
+
+void Car::display(unsigned int id) {
+    std::cout << "Car " << id << ":" << std::endl
+              << "\tmanufacturer: " << m_Manufacturer << std::endl
+              << "\tmodel: " << m_Model << std::endl
+              << "\tplate number: " << m_PlateNumber << std::endl
+              << "\tyear: " << m_Year << std::endl
+              << "\trental price: $" << m_RentalPrice << std::endl
+              << std::boolalpha
+              << "\tis available: " << m_IsAvailable << std::endl;
 }

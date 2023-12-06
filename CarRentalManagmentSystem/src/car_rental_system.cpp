@@ -12,105 +12,69 @@ void CarRentalSystem::addCustomer(Customer customer) {
 }
 
 void CarRentalSystem::rentCar() {
-    std::string name;
-    std::cout << "Enter customer's name: ";
-    std::cin >> name;
-    std::vector<Customer>::iterator itCustomer = std::find_if(m_Customers.begin(),
-                                                              m_Customers.end(),
-                                                              [&](const Customer &customer) {
-                                                                  return customer.getName() == name;
-                                                              });
-
-    while (itCustomer == m_Customers.end() && m_Customers.size() > 0) {
-        std::cout << "Enter customer's name: ";
-        std::cin >> name;
-        itCustomer = std::find_if(m_Customers.begin(),
-                                  m_Customers.end(),
-                                  [&](const Customer &customer) {
-                                      return customer.getName() == name;
-                                  });
-    }
-
-    std::string model;
-    std::cout << "Enter car's model: ";
-    std::cin >> model;
-    std::vector<Car>::iterator itCar = std::find_if(m_Cars.begin(),
-                                                    m_Cars.end(),
-                                                    [&](const Car &car) {
-                                                        return car.getModel() == model;
-                                                    });
-
-    while (itCar == m_Cars.end() && m_Cars.size() > 0) {
-        std::cout << "Enter car's model: ";
-        std::cin >> model;
-        itCar = std::find_if(m_Cars.begin(),
-                             m_Cars.end(),
-                             [&](const Car &car) {
-                                 return car.getModel() == model;
-                             });
-    }
-
+    unsigned int customerId;
+    unsigned int carId;
     unsigned int rentalDays;
-    std::cout << "Enter car's rental days: ";
+
+    std::cin.ignore();
+
+    do {
+        std::cout << "Enter the id of the customer: ";
+        std::cin >> customerId;
+    } while (customerId >= m_Customers.size() && m_Customers.size());
+
+CAR_ID:
+    do {
+        std::cout << "Enter the id of the car: ";
+        std::cin >> carId;
+    } while (carId >= m_Cars.size() && m_Cars.size());
+
+    std::cout << "Enter rental days: ";
     std::cin >> rentalDays;
 
-    m_Rentals.push_back(Rental(&(*itCustomer), &(*itCar), rentalDays));
+    if (m_Cars[carId].getIsAvailable()) {
+        m_Rentals.push_back(Rental(&m_Customers[customerId], &m_Cars[carId], rentalDays));
+        m_Cars[carId].setIsAvailable(false);
+    } else {
+        std::cerr << "This car is already booked!";
+        goto CAR_ID;
+    }
 }
 
 void CarRentalSystem::returnCar() {
-    std::string name;
-    std::cout << "Enter customer's name: ";
-    std::cin >> name;
-    std::vector<Customer>::iterator itCustomer = std::find_if(m_Customers.begin(),
-                                                              m_Customers.end(),
-                                                              [&](const Customer &customer) {
-                                                                  return customer.getName() == name;
-                                                              });
+    unsigned int rentalId;
 
-    while (itCustomer == m_Customers.end() && m_Customers.size() > 0) {
-        std::cout << "Enter customer's name: ";
-        std::cin >> name;
-        itCustomer = std::find_if(m_Customers.begin(),
-                                  m_Customers.end(),
-                                  [&](const Customer &customer) {
-                                      return customer.getName() == name;
-                                  });
-    }
+    do {
+        std::cout << "Enter the id of the rental: ";
+        std::cin >> rentalId;
+    } while (rentalId >= m_Rentals.size() && m_Rentals.size());
 
-    std::vector<Rental>::iterator itRental = std::find_if(m_Rentals.begin(),
-                                                          m_Rentals.end(),
-                                                          [&](const Rental &rental) {
-                                                              return rental.getCustomer() == &(*itCustomer);
-                                                          });
-
-    if (itRental != m_Rentals.end()) {
-        m_Rentals.erase(itRental);
-    }
+    m_Rentals.erase(m_Rentals.begin() + rentalId);
 }
 
 void CarRentalSystem::displayCars() {
-    for (const Car &car : m_Cars)
-        std::cout << car;
+    for (unsigned int i = 0; i < m_Cars.size(); i++)
+        m_Cars[i].display(i);
 }
 
 void CarRentalSystem::displayAvailableCars() {
-    for (const Car &car : m_Cars)
-        if (car.getIsAvailable())
-            std::cout << car;
+    for (unsigned int i = 0; i < m_Cars.size(); i++)
+        if (m_Cars[i].getIsAvailable())
+            m_Cars[i].display(i);
 }
 
 void CarRentalSystem::displayRentedCars() {
-    for (const Car &car : m_Cars)
-        if (!car.getIsAvailable())
-            std::cout << car;
+    for (unsigned int i = 0; i < m_Cars.size(); i++)
+        if (!m_Cars[i].getIsAvailable())
+            m_Cars[i].display(i);
 }
 
 void CarRentalSystem::displayCustomers() {
-    for (const Customer &customer : m_Customers)
-        std::cout << customer;
+    for (unsigned int i = 0; i < m_Customers.size(); i++)
+        m_Customers[i].display(i);
 }
 
 void CarRentalSystem::displayRentals() {
-    for (const Rental &rental : m_Rentals)
-        std::cout << rental;
+    for (unsigned int i = 0; i < m_Rentals.size(); i++)
+        m_Rentals[i].display(i);
 }

@@ -1,6 +1,5 @@
 #pragma once
 
-#include <iostream>
 #include <string>
 
 class Car {
@@ -28,17 +27,7 @@ class Car {
 
     void setIsAvailable(bool isAvailable);
 
-    friend std::ostream &operator<<(std::ostream &fmt, const Car &car) {
-        fmt << "Car: " << std::endl
-            << "\tManufacturer: " << car.m_Manufacturer << std::endl
-            << "\tModel: " << car.m_Model << std::endl
-            << "\tPlateNumber: " << car.m_PlateNumber << std::endl
-            << "\tYear: " << car.m_Year << std::endl
-            << "\tRentalPrice: " << car.m_RentalPrice << std::endl
-            << std::boolalpha
-            << "\tIsAvailable: " << car.m_IsAvailable << std::endl;
-        return fmt;
-    }
+    void display(unsigned int id);
 
    private:
     std::string m_Manufacturer;

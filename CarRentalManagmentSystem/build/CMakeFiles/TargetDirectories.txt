@@ -1,3 +1,0 @@
-/home/cau/Desktop/Projects/Github/ComputerScienceCAU/CarRentalManagmentSystem/build/CMakeFiles/CarRentalManagmentSystem.dir
-/home/cau/Desktop/Projects/Github/ComputerScienceCAU/CarRentalManagmentSystem/build/CMakeFiles/edit_cache.dir
-/home/cau/Desktop/Projects/Github/ComputerScienceCAU/CarRentalManagmentSystem/build/CMakeFiles/rebuild_cache.dir

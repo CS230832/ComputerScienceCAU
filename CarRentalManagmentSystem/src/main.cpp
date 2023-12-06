@@ -1,8 +1,5 @@
 #include <iostream>
 
-#include <car.hpp>
-#include <customer.hpp>
-#include <rental.hpp>
 #include <car_rental_system.hpp>
 
 void mainPrompt(unsigned int* choice);
@@ -10,52 +7,44 @@ void mainPrompt(unsigned int* choice);
 int main() {
     unsigned int choice = 0;
 
-    CarRentalSystem mngr{};
-
+    CarRentalSystem manager{};
     do {
         mainPrompt(&choice);
         switch (choice) {
-            case 1: {
-                mngr.addCar(Car::getFromConsole());
+            case 1:
+                manager.addCar(Car::getFromConsole());
                 break;
-            }
-            case 2: {
-                mngr.addCustomer(Customer::getFromConsole());
+            case 2:
+                manager.addCustomer(Customer::getFromConsole());
                 break;
-            }
-            case 3: {
-                mngr.rentCar();
+            case 3:
+                manager.rentCar();
                 break;
-            }
-            case 4: {
-                mngr.returnCar();
+            case 4:
+                manager.returnCar();
                 break;
-            }
-            case 5: {
-                mngr.displayCars();
+            case 5:
+                manager.displayCars();
                 break;
-            }
-            case 6: {
-                mngr.displayAvailableCars();
+            case 6:
+                manager.displayAvailableCars();
                 break;
-            }
-            case 7: {
-                mngr.displayRentedCars();
+            case 7:
+                manager.displayRentedCars();
                 break;
-            }
-            case 8: {
-                mngr.displayCustomers();
+            case 8:
+                manager.displayCustomers();
                 break;
-            }
-            case 9: {
-                mngr.displayRentals();
+            case 9:
+                manager.displayRentals();
                 break;
-            }
             case 10:
                 break;
             default:
                 std::cerr << "There is no choice such as " << choice << std::endl;
         }
+
+        std::cout << std::endl << std::endl << std::endl;
     } while (choice != 10);
 
     return 0;
@@ -72,5 +61,6 @@ void mainPrompt(unsigned int* choice) {
     std::cout << "8. Display all customers" << std::endl;
     std::cout << "9. Display all rentals" << std::endl;
     std::cout << "10. Exit" << std::endl;
+    std::cout << "Enter: ";
     std::cin >> *choice;
 }
