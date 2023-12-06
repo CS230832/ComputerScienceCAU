@@ -9,14 +9,15 @@ class Car {
         std::string model,
         std::string plateNumber,
         unsigned int year,
-        float rentalPrice,
-        bool isAvailable)
+        float rentalPrice)
         : m_Manufacturer(manufacturer),
           m_Model(model),
           m_PlateNumber(plateNumber),
           m_Year(year),
           m_RentalPrice(rentalPrice),
-          m_IsAvailable(isAvailable) {}
+          m_IsAvailable(true) {}
+
+    static Car getFromConsole();
 
     const std::string &getManufacturer() const;
     const std::string &getModel() const;
