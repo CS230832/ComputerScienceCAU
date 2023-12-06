@@ -1,0 +1,11 @@
+# ninja log v5
+1	528	1701855993182694883	CMakeFiles/CarRentalManagmentSystem.dir/src/main.cpp.o	722ab9dd4811005f
+529	617	1701855993273695357	CarRentalManagmentSystem	b45e76f916a3466f
+2	586	1701856134096546294	CMakeFiles/CarRentalManagmentSystem.dir/src/main.cpp.o	722ab9dd4811005f
+586	693	1701856134205546984	CarRentalManagmentSystem	b45e76f916a3466f
+2	589	1701856216076065288	CMakeFiles/CarRentalManagmentSystem.dir/src/main.cpp.o	722ab9dd4811005f
+589	691	1701856216179065940	CarRentalManagmentSystem	b45e76f916a3466f
+2	622	1701857733705037769	CMakeFiles/CarRentalManagmentSystem.dir/src/main.cpp.o	722ab9dd4811005f
+622	719	1701857733804038430	CarRentalManagmentSystem	b45e76f916a3466f
+2	593	1701857748940139530	CMakeFiles/CarRentalManagmentSystem.dir/src/main.cpp.o	722ab9dd4811005f
+594	716	1701857749064140358	CarRentalManagmentSystem	b45e76f916a3466f

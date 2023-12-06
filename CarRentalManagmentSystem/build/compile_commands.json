@@ -1,0 +1,8 @@
+[
+{
+  "directory": "/home/cau/Desktop/Projects/Github/ComputerScienceCAU/CarRentalManagmentSystem/build",
+  "command": "/home/linuxbrew/.linuxbrew/bin/clang++ -I/home/cau/Desktop/Projects/Github/ComputerScienceCAU/CarRentalManagmentSystem/include -g -std=gnu++23 -o CMakeFiles/CarRentalManagmentSystem.dir/src/main.cpp.o -c /home/cau/Desktop/Projects/Github/ComputerScienceCAU/CarRentalManagmentSystem/src/main.cpp",
+  "file": "/home/cau/Desktop/Projects/Github/ComputerScienceCAU/CarRentalManagmentSystem/src/main.cpp",
+  "output": "CMakeFiles/CarRentalManagmentSystem.dir/src/main.cpp.o"
+}
+]
